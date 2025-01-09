@@ -39,7 +39,7 @@ namespace ContactsManagerNamespace
             var result = "\n--- Contact List ---\n";
             foreach (var contact in contacts)
             {
-                result += $"ID: {contact.Id}\n";
+                result += $"ID: {contact.Id}\n";   //Foreach loop som + resultatet av varje egenskap på ny kontakt och lägger in det i listan. 
                 result += $"Name: {contact.FirstName} {contact.LastName}\n";
                 result += $"Email: {contact.Email}\n";
                 result += $"Phone: {contact.PhoneNumber}\n";

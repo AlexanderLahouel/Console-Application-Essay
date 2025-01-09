@@ -7,10 +7,10 @@ public class Program
 
     public static void Main()
     {
-        var contactService = new ContactService();
-        var contactManager = new ContactManager(contactService);
+        var contactService = new ContactService();  //Tillkallar min contactservice klass.
+        var contactManager = new ContactManager(contactService);  //Tillkallar min contactmanager klass.
 
-        RunApplication(contactManager);
+        RunApplication(contactManager);  // Startar applikationen.
     }
 
 
@@ -31,16 +31,17 @@ public class Program
             switch (option)
             {
                 case "1":
-                    AddContact(contactManager);
+                    AddContact(contactManager);   //AddContact contactmangager blir tillkallad.
                     break;
 
                 case "2":
-                    Console.WriteLine(contactManager.ViewContacts());
+                    Console.Clear();
+                    Console.WriteLine(contactManager.ViewContacts());  //Returnerar listan med alla kontakter.
                     break;
 
                 case "3":
                     running = false;
-                    Console.WriteLine("Exiting program.");
+                    Console.WriteLine("Exiting program.");   //Stänger av programmet.
                     break;
 
                 default:
@@ -55,7 +56,7 @@ public class Program
         Console.WriteLine("\n--- Add a New Contact ---");
 
         Console.WriteLine("First Name: ");
-        string firstName = Console.ReadLine() ?? string.Empty;
+        string firstName = Console.ReadLine() ?? string.Empty; //Om readline är tom returneras högersidan alltså string.empty om det är ett input så returneras vänstersidan.
 
         Console.WriteLine("Last Name: ");
         string lastName = Console.ReadLine() ?? string.Empty;
